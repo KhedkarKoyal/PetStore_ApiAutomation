@@ -1,5 +1,8 @@
 package api.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -19,7 +22,7 @@ public class UserTest {
 	Faker fake;
 	User user;
 	public Logger log;   //for log
-	
+	List<User> userList;
 	@BeforeClass
 	public void setUpData()
 	{
@@ -37,11 +40,11 @@ public class UserTest {
 	}
 	
 	
-	@Test(priority=1)
+	//@Test(priority=1)
 	public void TestPostUser()
 	{
 		log.info("****************creating user**********************");
-		Response rsp = UserEndPonts2.createUSer(user);
+		Response rsp = UserEndPonts.createUSer(user);
 		rsp.then().log().all();
 		
 		log.info("**************** user is create **********************");
@@ -74,8 +77,7 @@ public class UserTest {
 	//	Assert.assertEquals(rspafter.getStatusCode(), 200);
 	}
 	
-	
-	
+
 	
 	//@Test(priority=4,dependsOnMethods="TestPostUser")
 	public void TestDeleteUserByName()
@@ -87,12 +89,52 @@ public class UserTest {
 		
 		
 	}
+//	@Test(priority=4,dependsOnMethods="TestPostUser")
+	public void testUSerLogin()
+	{
+		log.info("****************delete user**********************");
+		Response rsp = UserEndPonts.userLogin(this.user.getUsername(),this.user.getPassword());
+		rsp.then().log().body();
+		Assert.assertEquals(rsp.getStatusCode(), 200);
+		
+		
+	}
 	
 	
-	
-	
-	
-	
-	
-	
+	//@Test(priority=5,dependsOnMethods="TestPostUser")
+	public void testUSerLogOut()
+	{
+		log.info("****************delete user**********************");
+		Response rsp = UserEndPonts.userLogout();
+		rsp.then().log().body();
+		Assert.assertEquals(rsp.getStatusCode(), 200);
+		
+		
+	}
+	@Test(priority=6)
+	public void testCreateUserWithArray()
+	{
+		userList = new ArrayList<>();
+
+		    for(int i = 0; i < 2; i++)   // create 2 users (you can increase)
+		    {
+		        User user = new User();
+
+		        user.setId(fake.idNumber().hashCode());
+		        user.setUsername(fake.name().username());
+		        user.setFirstName(fake.name().firstName());
+		        user.setLastName(fake.name().lastName());
+		        user.setEmail(fake.internet().safeEmailAddress());
+		        user.setPassword(fake.internet().password(5, 10));
+		        user.setPhone(fake.phoneNumber().cellPhone());
+		        user.setUserStatus(0);
+
+		        userList.add(user); // 👈 add to list
+
+		    }
+		    
+		    Response rsp=UserEndPonts.crateUserWithArray(userList);
+		    rsp.then().log().body();
+			Assert.assertEquals(rsp.getStatusCode(), 200);
+}
 }
