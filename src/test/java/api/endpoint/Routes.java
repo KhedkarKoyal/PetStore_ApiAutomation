@@ -23,4 +23,14 @@ public class Routes {
 
 
 	public static String userPostByArray_url=base_url + "user/createWithArray";
+	
+	//Pet EndPoints
+	
+	public static String petPost_url=base_url+"pet";///pet/1/uploadImage
+	public static String petImagePost_url=base_url+"pet/{petId}/uploadImage";
+	public static String petUpdate_url=base_url+"pet";
+	public static String petGetByStatus_url=base_url+"pet/findByStatus";
+	//https://petstore.swagger.io/v2/pet/1
+	public static String PetGetById_url=base_url+"pet/{id}";
+	public static String PetDeleteById_url=base_url+"pet/{id}";
 }
