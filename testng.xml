@@ -8,6 +8,7 @@
 		<classes>
 			<class name="api.test.UserTest" />
 			<class name="api.test.PetTest" />
+			<class name="api.test.StoreTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

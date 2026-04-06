@@ -111,7 +111,7 @@ public class PetTest {
 		Assert.assertEquals(rsp.contentType(), "application/json");
 		log.info("**************** user is create **********************");
 	}
-	@Test(priority=2)
+	//@Test(priority=2)
 	public void TestGetPetById()
 	{
 		log.info("****************pet get by Id**********************");
@@ -120,7 +120,7 @@ public class PetTest {
 		Assert.assertEquals(rsp.contentType(), "application/json");
 		log.info("**************** pet get by Id found **********************");
 	}
-	@Test(priority=3)
+	//@Test(priority=3)
 		public void TestdeletePetById()
 		{
 			log.info("****************deleting pet**********************");

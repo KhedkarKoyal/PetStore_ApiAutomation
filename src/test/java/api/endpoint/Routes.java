@@ -33,4 +33,14 @@ public class Routes {
 	//https://petstore.swagger.io/v2/pet/1
 	public static String PetGetById_url=base_url+"pet/{id}";
 	public static String PetDeleteById_url=base_url+"pet/{id}";
+	
+	//store endpoints
+	
+	public static String storePost_url=base_url+"store/order";
+
+
+	public static String storeGet_url=base_url+"store/order/{id}";
+
+
+	public static String storeDelete_url=base_url+"store/order/{id}";
 }
