@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-06T10:19:26 IST" name="Suite" finished-at="2026-04-06T10:19:37 IST" duration-ms="11811">
+    <groups>
+    </groups>
+    <test started-at="2026-04-06T10:19:26 IST" name="Test" finished-at="2026-04-06T10:19:37 IST" duration-ms="11811">
+      <class name="api.test.UserTest">
+        <test-method is-config="true" signature="setUpData()[pri:0, instance:api.test.UserTest@15043a2f]" started-at="2026-04-06T10:19:27 IST" name="setUpData" finished-at="2026-04-06T10:19:29 IST" duration-ms="2197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpData -->
+        <test-method signature="TestPostUser()[pri:1, instance:api.test.UserTest@15043a2f]" started-at="2026-04-06T10:19:29 IST" name="TestPostUser" finished-at="2026-04-06T10:19:37 IST" duration-ms="8291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestPostUser -->
+      </class> <!-- api.test.UserTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
